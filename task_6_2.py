@@ -7,3 +7,18 @@
 толщиной в 1 см*число см толщины полотна;
 проверить работу метода.
 Например: 20 м*5000 м*25 кг*5 см = 12500 т.'''
+
+
+class Road:
+    def __init__(self, length, width):
+        self._length = int(length)
+        self._width = int(width)
+
+    def calc_mass(self, mass_per_qm, depth):
+        print(f'Масса асфальта, необходимого для покрытия всей дороги длиной {self._length} метров и '
+              f'шириной {self._width} метров, при норме покрытия {mass_per_qm} кг/кв.м при толщине {depth} см '
+              f'равна {int((self._length * self._width * mass_per_qm * depth) / 1000)} т.')
+
+
+my_road = Road(5000, 20)
+my_road.calc_mass(25, 5)
